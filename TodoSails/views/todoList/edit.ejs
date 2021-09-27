@@ -1,0 +1,32 @@
+<form action="/todo/update/<%= data.id %>" method="POST">
+    <div class="input-field col s12 l6">
+      <input type="text" id="first_name" class="validate" name="title" value="<%= data.titles %>" required>
+      <label for="first_name">Title</label>
+    </div>
+    <div class="input-field col s12">
+      <textarea id="textarea1" class="materialize-textarea validate"  name="task"  required><%= data.body %></textarea>
+      <label for="textarea1">Content</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="date-picker" type="date" class="datepicker" name="date" value="<%= data.date %>" required />
+      <label for="date-picker">Select date</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="time-picker" type="text" class="timepicker" name="time" value="<%= data.time %>" required>
+      <label for="time-picker">Set time</label>
+    </div>
+    <div class="col s12">
+        <button class="btn waves-effect waves-light" type="submit" name="submit">
+            <i class="material-icons ">Update Task</i>
+        </button>
+    </div>
+  </form>
+
+
+  <script>
+    setTimeout(() => {
+        $(document).ready(function(){
+            $('.timepicker').timepicker();
+          });
+      }, 1000);
+</script>
